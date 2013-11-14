@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:6bb3f28944f1c5590cebda9d02248013$ -->
+<TextureAtlas imagePath="DefendCastleAtlas.png">
+    <SubTexture name="Bomb" x="2" y="1942" width="72" height="76"/>
+    <SubTexture name="GameBg" x="2" y="2" width="960" height="643"/>
+    <SubTexture name="GenericPopup" x="2" y="1289" width="522" height="409"/>
+    <SubTexture name="GreenBtn" x="189" y="1700" width="100" height="50"/>
+    <SubTexture name="GreenBtnDown" x="123" y="1766" width="100" height="50"/>
+    <SubTexture name="RedBtn" x="2" y="1821" width="119" height="119"/>
+    <SubTexture name="RedBtnDown" x="2" y="1700" width="119" height="119"/>
+    <SubTexture name="SkyBg" x="2" y="647" width="960" height="640"/>
+    <SubTexture name="explosion" x="123" y="1700" width="64" height="64"/>
+    <SubTexture name="smoke" x="76" y="1942" width="64" height="64"/>
+</TextureAtlas>

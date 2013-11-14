@@ -42,6 +42,7 @@ package
 		public function DefendYourCastle()
 		{
 			init();
+			trace("what's up");
 		}
 		
 		

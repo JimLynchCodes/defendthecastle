@@ -190,13 +190,14 @@ package com.utils
 				trace("killed");
 				guy.visible = false;
 				GameModel.kills ++;
-				
+				guy.playRunningAnimation();
 			}
 			
 			else
 			{
 				if (guy)
 				{
+					// really should play guy falling animation
 					guy.playRunningAnimation();
 					
 				}

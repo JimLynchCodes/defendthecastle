@@ -4,20 +4,19 @@ package
 	import com.configu.DCConfig;
 	import com.controllers.DCController;
 	import com.models.DCModel;
-	import com.views.NewViewIos;
+	import com.views.DcMainView;
+	import com.trash.NewViewIos;
 	
 	import flash.display.Sprite;
 	import flash.display.Stage;
 	import flash.display.StageAlign;
 	import flash.display.StageAspectRatio;
-	import flash.display.StageOrientation;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	import flash.system.Capabilities;
 	
 	import starling.core.Starling;
-	import starling.display.DisplayObject;
 	import starling.events.Event;
 	
 	
@@ -42,7 +41,6 @@ package
 		public function DefendYourCastle()
 		{
 			init();
-			trace("what's up");
 		}
 		
 		
@@ -62,33 +60,27 @@ package
 			_realWidth = stage.fullScreenWidth;
 			_realHeight= stage.fullScreenHeight;
 			
-			// makes display only landscape, put this the other way if portrait
-			
-			_config = new DCConfig();
-			_model = new DCModel(_config);
-			_controller = new DCController(_model);
-			
-//			viewPort = new Rectangle(0,0, _realWidth, _realHeight);
-				
-//			var viewPort:Rectangle = new Rectangle(0,0 , _realWidth, _realHeight) 
 			_version = Capabilities.version;
 			
 			if (_version.substr(0, 3) == "IOS")
 			{
-			var viewPort:Rectangle = new Rectangle(0,0 , _realWidth, _realHeight) 
-			Starling.handleLostContext = true;
 				
-				trace("starting ipad class");
-				_mainView = new Starling(NewViewIos, stage, viewPort, null, "auto");
+				 var viewPort:Rectangle = new Rectangle(0,0 , _realWidth, _realHeight) 
+
+				
+				Starling.handleLostContext = true;
+				
+				_mainView = new Starling(DcMainView, stage, viewPort, null, "auto");
 				_mainView.stage.stageWidth = 960;
 				_mainView.stage.stageHeight = 640;
 				
 				_mainView.antiAliasing = 1;
-				_mainView.addEventListener(starling.events.Event.ROOT_CREATED, onMainViewCreated);
+//				_mainView.addEventListener(starling.events.Event.ROOT_CREATED, onMainViewCreated);
 				_mainView.start();
 				
-				trace(_mainView.contentScaleFactor)
 				
+				trace(_mainView.contentScaleFactor)
+				trace("starting ipad class");
 				
 			}
 			if (_version.substr(0, 3) == "AND")
@@ -96,39 +88,64 @@ package
 				
 				this.stage.setAspectRatio( StageAspectRatio.LANDSCAPE );
 				
-				
+				/**
+				 *  I don't know if it is just my computer or something,
+				 *  but the firdt way works in simulator and the second works
+				 *  on device. 
+				 */
+				// viewPort = new Rectangle(0,0 , _realWidth, _realHeight) 
 				viewPort = new Rectangle(0,0 , _realHeight, _realWidth) 
-				trace("starting android class");
-				_mainView = new Starling(NewViewIos, stage, viewPort, null, "auto");
+			
+				
+				_mainView = new Starling(DcMainView, stage, viewPort, null, "auto");
 				_mainView.stage.stageWidth = 960;
 				_mainView.stage.stageHeight = 640;
 				
 				_mainView.antiAliasing = 1;
-				_mainView.addEventListener(starling.events.Event.ROOT_CREATED, onMainViewCreated);
+//				_mainView.addEventListener(starling.events.Event.ROOT_CREATED, onMainViewCreated);
 				_mainView.start();
+//				addChild(_mainView);
+				
 				
 				trace(_mainView.contentScaleFactor)
+				trace("starting android class");
+			}
+			
+			if (_version.substr(0, 3) != "AND" && 
+				_version.substr(0, 3) != "IOS")
+			{
+				// start browser mode
+//				var viewPort:Rectangle = new Rectangle(0,0 , _realWidth, _realHeight) 
 				
+				
+				Starling.handleLostContext = true;
+				
+				_mainView = new Starling(DcMainView, stage, viewPort, null, "auto");
+				_mainView.stage.stageWidth = 960;
+				_mainView.stage.stageHeight = 640;
+				
+				_mainView.antiAliasing = 1;
+				//				_mainView.addEventListener(starling.events.Event.ROOT_CREATED, onMainViewCreated);
+				_mainView.start();
 				
 			}
 			
-		}
-		
-		protected function onContextCreated(event:flash.events.Event):void
-		{
-			// TODO Auto-generated method stub
 			
-		}		
-		
-		private function onMainViewCreated(e:starling.events.Event):void
-		{
-			var createdView:NewViewIos = Starling.current.root as NewViewIos;
-			
-			createdView.passVars(_model, _controller);
-			
-//			_mainView.stage.addChild((createdView));
 			
 		}
+		
+		
+		
+		
+//		private function onMainViewCreated(e:starling.events.Event):void
+//		{
+////			var createdView:NewViewIos = Starling.current.root as NewViewIos;
+////			
+////			createdView.passVars(_model, _controller);
+//			
+////			_mainView.stage.addChild((createdView));
+//			
+//		}
 		
 		
 		

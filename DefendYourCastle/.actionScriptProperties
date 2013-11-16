@@ -52,7 +52,7 @@
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
-    <buildTarget buildTargetName="device" iosSettingsVersion="2" isCurrent="true" platformId="com.adobe.flexide.multiplatform.ios.platform" provisioningFile="/Users/bobolicious3000/Downloads/mobile/RuFoodStar/cert/ipad_first_test_dev_profile.mobileprovision" releasePackageType="">
+    <buildTarget buildTargetName="device" iosSettingsVersion="2" isCurrent="true" platformId="com.adobe.flexide.multiplatform.ios.platform" provisioningFile="/Users/bobolicious3000/Documents/MoreFlashBProjects/DefendYourCastle/src/com/assets/cert/DefendCastleProfile.mobileprovision" releasePackageType="">
       <airSettings airCertificatePath="/Users/bobolicious3000/Documents/MoreFlashBProjects/DefendYourCastle/src/com/assets/cert/Certificates2.p12" airTimestamp="true" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths/>

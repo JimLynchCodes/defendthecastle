@@ -2,7 +2,7 @@
 <data version="1.0">
     <struct type="Settings">
         <key>fileFormatVersion</key>
-        <int>0</int>
+        <int>1</int>
         <key>variation</key>
         <string>main</string>
         <key>verbose</key>
@@ -142,8 +142,6 @@
         <key>fileList</key>
         <array>
             <filename>tpinput3</filename>
-            <filename>../../../../../../Ex_Files_FlashGames_Starling 2/Exercise Files/Spacer (Completed)/Spacer/assets/explosion.png</filename>
-            <filename>../../../../../../Ex_Files_FlashGames_Starling 2/Exercise Files/Spacer (Completed)/Spacer/assets/smoke.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

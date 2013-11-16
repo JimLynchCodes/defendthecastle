@@ -3,7 +3,7 @@ package com.utils
 	
 	import com.managers.EnemyManager;
 	import com.objects.EnemyGuy;
-	import com.states.Play;
+	import com.states.PlayState;
 	
 	import flash.geom.Point;
 	import flash.utils.getTimer;
@@ -25,9 +25,9 @@ package com.utils
 				private var _guy:EnemyGuy;
 				private var _stage:Object;
 				private var _view:*;
-				private var _playState:Play;
+				private var _playState:PlayState;
 				
-				public function RungeKuttaMover(playState:Play)
+				public function RungeKuttaMover(playState:PlayState)
 				{
 					_playState = playState;
 //					init();

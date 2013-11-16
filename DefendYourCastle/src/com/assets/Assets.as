@@ -3,6 +3,9 @@ package com.assets
 	import flash.display.Bitmap;
 	
 	import starling.display.Sprite;
+	import starling.extensions.Particle;
+	import starling.extensions.ParticleDesignerPS;
+	import starling.extensions.ParticleSystem;
 	import starling.text.BitmapFont;
 	import starling.text.TextField;
 	import starling.textures.Texture;
@@ -68,6 +71,19 @@ package com.assets
 		public static var komikaXml:Class;
 		
 		
+		[Embed(source = "/font/BasicWhite.png")]
+		public static var basicWhiteFont:Class;
+		
+		[Embed(source = "/font/BasicWhite.fnt", mimeType="application/octet-stream")]
+		public static var basicWhiteFontXml:Class;
+		
+		[Embed(source = "/particles/particle.pex", mimeType="application/octet-stream")]
+		public static var FireParticle:Class;
+		
+		[Embed(source = "/particles/texture.png")]
+		public static var FireParticleImage:Class;
+		
+		
 		private static var _fpAtlas1Bitmap:Bitmap;
 		private static var _fpAtlasTexture:starling.textures.Texture;
 		private static var _fpAtlas1Xml:XML;
@@ -92,6 +108,7 @@ package com.assets
 		public static var redBtnDownT:Texture;
 		public static var fpMinesweeper2TextureAtlas:TextureAtlas;
 		public static var guyFrames:Vector.<Texture>;
+		public static var fireParticles:ParticleDesignerPS;
 		
 		trace("logoT");
 		
@@ -152,6 +169,14 @@ package com.assets
 
 			// text fonts
 			TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmap(new komika), XML(new komikaXml)));
+			TextField.registerBitmapFont(new BitmapFont(Texture.fromBitmap(new basicWhiteFont), XML(new basicWhiteFontXml)), "BasicWhiteFont");
+		
+		
+				
+//			fireParticles = new ParticleDesignerPS(new XML(new FireParticle()),
+//				Texture.fromBitmap(new FireParticleImage));
+			
+		
 		
 		}
 		

@@ -2,8 +2,8 @@ package com.ui.buttons.loadGameButton
 {
 	
 	import com.assets.Assets;
-	import com.utils.DcGameData;
-	import com.views.NewViewIos;
+	import com.trash.DcGameData;
+	import com.trash.NewViewIos;
 	
 	import org.osflash.signals.Signal;
 	

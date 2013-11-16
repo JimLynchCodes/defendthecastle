@@ -1,12 +1,11 @@
 package com.models
 {
 	
-	import com.states.Play;
+	import com.states.PlayState;
 	
 	import org.osflash.signals.Signal;
 	
 	import starling.animation.Juggler;
-	import starling.events.Event;
 	import starling.events.EventDispatcher;
 	
 	public class GameModel extends EventDispatcher
@@ -31,7 +30,70 @@ package com.models
 		public static var gameJuggler:Juggler = new Juggler;
 		private static var instance:GameModel;
 		private static var allowInstantiation:Boolean;
+		private static var _levelChosen:int;
+		private static var _mana:int = 200;
+		private static var _secondsLeft:int = 100;
+		private static var _levelTimeUpSig:Signal = new Signal();
 		
+		
+		
+		
+		
+		public static function get levelTimeUpSig():Signal
+		{
+			return _levelTimeUpSig;
+		}
+
+		public static function set levelTimeUpSig(value:Signal):void
+		{
+			_levelTimeUpSig = value;
+		}
+
+		public static function get secondsLeft():int
+		{
+			return _secondsLeft;
+		}
+
+		public static function set secondsLeft(value:int):void
+		{
+			_secondsLeft = value;
+			if (_secondsLeft >= 0)
+			{
+				PlayState._timeTF.text = "TIME: " + value;
+				
+			}
+			
+			if (_secondsLeft == 0)
+			{
+				levelTimeUpSig.dispatch();
+			}
+		}
+
+		public static function get mana():int
+		{
+			return _mana;
+		}
+
+		public static function set mana(value:int):void
+		{
+			_mana = value;
+			
+			
+			PlayState._manaTF.text = "MANA: " + _mana;
+			
+			
+		}
+
+		public static function get levelChosen():int
+		{
+			return _levelChosen;
+		}
+
+		public static function set levelChosen(value:int):void
+		{
+			_levelChosen = value;
+		}
+
 		public static function get kills():int
 		{
 			return _kills;
@@ -41,7 +103,7 @@ package com.models
 		{
 			_kills = value;
 			
-			Play._killsTF.text = "CASUALTIES: " + _kills;
+			PlayState._killsTF.text = "SCORE: " + _kills;
 		}
 
 		public static function getInstance():GameModel {
@@ -107,11 +169,11 @@ package com.models
 //			trace ("_castleHealth " + _castleHealth);
 			if (_castleHealth >= 0)
 			{
-				Play._healthTF.text = "HEALTH: " + value;
+				PlayState._healthTF.text = "HEALTH: " + value;
 				
 			}
 			
-			if (_castleHealth < 0)
+			if (_castleHealth <= 0)
 			{
 				gameOverSig.dispatch();
 			}

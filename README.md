@@ -6,11 +6,8 @@ This is the repo for my "Defend The Castle" Game. This is an old project built o
 The game was meant to be somewhat of a clone of the popular broswer game, "Defend Your Castle" where you grab the character and throw them into the air while they try to run across the screen and break into your castle. 
 
 <center>
-<img align="center" src="https://github.com/JimTheMan/defendthecastle/blob/master/defend-castle.jpg" alt="1">
+<img align="center" src="https://github.com/JimTheMan/defendthecastle/blob/master/defend-castle.jpg">
 </center>
-
-
-<img style="align: center;" src="https://github.com/JimTheMan/defendthecastle/blob/master/defend-castle.jpg">
 
 
 
